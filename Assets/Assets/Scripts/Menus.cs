@@ -10,11 +10,15 @@ public class Menus : MonoBehaviour
     public bool isAttack;
     public bool isMenus;
 
+    // ref to battle script
+    [SerializeField] GameObject battleGO;
+    Battle battle;
 
     private void Start()
     {
         isAttack = false;
-        isMenus = false;
+        isMenus = true;
+        battle = battleGO.GetComponent<Battle>();
     }
 
     private void Update()
@@ -51,6 +55,7 @@ public class Menus : MonoBehaviour
     {
         // player attempts to run away. 
         // if they runaway, play run audio
+        battle.EncounterEnd();
     }
 
 }
