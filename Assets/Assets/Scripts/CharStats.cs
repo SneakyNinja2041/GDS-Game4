@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CharStats : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class CharStats : MonoBehaviour
     [SerializeField] GameObject battleGO;
     Battle battle;
 
+    [SerializeField] GameObject battleWinText;
+
+    public TextMeshProUGUI playerStats;
+
     void Start()
     {
         level = 5;
@@ -37,7 +42,7 @@ public class CharStats : MonoBehaviour
         maxHealth = level * healthMultiplier * 2;
         currentHealth = maxHealth;
 
-        atk = level * atkMultiplier;
+        atk = level + atkMultiplier;
 
         exp = startExp;
         maxExp = level * 3;
@@ -54,7 +59,7 @@ public class CharStats : MonoBehaviour
 
     void Update()
     {
-        if (exp == maxExp)
+        if (exp >= maxExp)
         {
             exp = 0;
             level++;
@@ -62,13 +67,21 @@ public class CharStats : MonoBehaviour
 
         hpBar.value = currentHealth;
         expBar.value = exp;
+        expBar.maxValue = level * 3;
 
         if (enemystats.currentHealth <= 0)
         {
-            exp += enemystats.level;
+            battleWinText.SetActive(true);
+            StartCoroutine(WaitA());
+        }
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = maxHealth;
             battle.EncounterEnd();
         }
 
+        playerStats.text = "BUNBUN  LVL: " + level;
     }
 
     public void Attack()
@@ -79,6 +92,7 @@ public class CharStats : MonoBehaviour
  
     public IEnumerator HitEnemy()
     {
+
         yield return new WaitForSeconds(4);
         Debug.Log("Enemy Hurt!");
         // audio clip
@@ -90,6 +104,14 @@ public class CharStats : MonoBehaviour
             enemystats.isMoved = true;
         }
 
+    }
+
+    public IEnumerator WaitA()
+    {
+        yield return new WaitForSeconds(1);
+        exp += enemystats.level;
+        battleWinText.SetActive(false);
+        battle.EncounterEnd();
     }
 
     

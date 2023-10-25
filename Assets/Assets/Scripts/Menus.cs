@@ -35,6 +35,7 @@ public class Menus : MonoBehaviour
             fightMenu.SetActive(false);
         }
 
+
     }
 
     public void AttackMenu()
@@ -57,5 +58,7 @@ public class Menus : MonoBehaviour
         // if they runaway, play run audio
         battle.EncounterEnd();
     }
+
+
 
 }

@@ -47,7 +47,6 @@ public class EnemyStats : MonoBehaviour
     public bool isMoved;
 
     public TextMeshProUGUI enemyName;
-    public TextMeshProUGUI enemyLevel;
 
     void Start()
     {
@@ -138,8 +137,7 @@ public class EnemyStats : MonoBehaviour
         atk = level * 3;
         maxHealth = level;
         currentHealth = maxHealth;
-        enemyName.text = "FIREBUN";
-        enemyLevel.text = "LVL: " + level.ToString();
+        enemyName.text = "FIREBUN  LVL: " + level.ToString();
         enemyHealth.maxValue = maxHealth;
         enemyHealth.value = currentHealth;
     }
@@ -151,8 +149,7 @@ public class EnemyStats : MonoBehaviour
         atk = level * 2;
         maxHealth = level * 2;
         currentHealth = maxHealth;
-        enemyName.text = "WATERBUN";
-        enemyLevel.text = "LVL: " + level.ToString();
+        enemyName.text = "WATERBUN  LVL: " + level.ToString();
         enemyHealth.maxValue = maxHealth;
         enemyHealth.value = currentHealth;
     }
@@ -164,8 +161,7 @@ public class EnemyStats : MonoBehaviour
         atk = level; 
         maxHealth = level * 3;
         currentHealth = maxHealth;
-        enemyName.text = "GRASSBUN";
-        enemyLevel.text = "LVL: " + level.ToString();
+        enemyName.text = "GRASSBUN  LVL: " + level.ToString();
         enemyHealth.maxValue = maxHealth;
         enemyHealth.value = currentHealth;
     }
@@ -177,8 +173,7 @@ public class EnemyStats : MonoBehaviour
         atk = level;
         maxHealth = level * 3;
         currentHealth = maxHealth;
-        enemyName.text = "ROCKBUN";
-        enemyLevel.text = "LVL: " + level.ToString();
+        enemyName.text = "ROCKBUN  LVL: " + level.ToString();
         enemyHealth.maxValue = maxHealth;
         enemyHealth.value = currentHealth;
     }
@@ -190,8 +185,7 @@ public class EnemyStats : MonoBehaviour
         atk = level * 2;
         maxHealth = level * 2;
         currentHealth = maxHealth;
-        enemyName.text = "ICEBUN";
-        enemyLevel.text = "LVL: " + level.ToString();
+        enemyName.text = "ICEBUN  LVL: " + level.ToString();
         enemyHealth.maxValue = maxHealth;
         enemyHealth.value = currentHealth;
     }
@@ -203,8 +197,7 @@ public class EnemyStats : MonoBehaviour
         atk = level * 3;
         maxHealth = level;
         currentHealth = maxHealth;
-        enemyName.text = "LIGHTNINGBUN";
-        enemyLevel.text = "LVL: " + level.ToString();
+        enemyName.text = "LIGHTNINGBUN  LVL: " + level.ToString();
         enemyHealth.maxValue = maxHealth;
         enemyHealth.value = currentHealth;
     }
@@ -216,8 +209,7 @@ public class EnemyStats : MonoBehaviour
         attackPS.Play();
         yield return new WaitForSeconds(4);
         playerStats.currentHealth -= atk;
-        attackPS.Play();
-
+        
     }
 
 

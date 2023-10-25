@@ -53,7 +53,7 @@ public class PlayerSelect : MonoBehaviour
         playerSprite.sprite = fireSprite;
         charStats.level = 5;
         charStats.healthMultiplier = 1;
-        charStats.atkMultiplier = 3;
+        charStats.atkMultiplier = 2;
 
         Time.timeScale = 1f;
         characterSelectCanvas.SetActive(false);
@@ -67,7 +67,7 @@ public class PlayerSelect : MonoBehaviour
         playerSprite.sprite = waterSprite;
         charStats.level = 5;
         charStats.healthMultiplier = 2;
-        charStats.atkMultiplier = 2;
+        charStats.atkMultiplier = 1;
 
         Time.timeScale = 1f;
         characterSelectCanvas.SetActive(false);
@@ -81,7 +81,7 @@ public class PlayerSelect : MonoBehaviour
         playerSprite.sprite = grassSprite;
         charStats.level = 5;
         charStats.healthMultiplier = 3;
-        charStats.atkMultiplier = 1;
+        charStats.atkMultiplier = 0;
 
         Time.timeScale = 1f;
         characterSelectCanvas.SetActive(false);
@@ -95,7 +95,7 @@ public class PlayerSelect : MonoBehaviour
         playerSprite.sprite = rockSprite;
         charStats.level = 5;
         charStats.healthMultiplier = 3;
-        charStats.atkMultiplier = 1;
+        charStats.atkMultiplier = 0;
 
         Time.timeScale = 1f;
         characterSelectCanvas.SetActive(false);
@@ -109,7 +109,7 @@ public class PlayerSelect : MonoBehaviour
         playerSprite.sprite = iceSprite;
         charStats.level = 5;
         charStats.healthMultiplier = 2;
-        charStats.atkMultiplier = 2;
+        charStats.atkMultiplier = 1;
 
         Time.timeScale = 1f;
         characterSelectCanvas.SetActive(false);
@@ -123,7 +123,7 @@ public class PlayerSelect : MonoBehaviour
         playerSprite.sprite = lightningSprite;
         charStats.level = 5;
         charStats.healthMultiplier = 1;
-        charStats.atkMultiplier = 3;
+        charStats.atkMultiplier = 2;
 
         Time.timeScale = 1f;
         characterSelectCanvas.SetActive(false);
